@@ -1,19 +1,19 @@
 package com.example.usermanagement.model;
 
 import jakarta.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
-
+import lombok.*;
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String roleName;
+    private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users = new HashSet<>();
+    private String description;
 
-    // Getters and Setters
 }
